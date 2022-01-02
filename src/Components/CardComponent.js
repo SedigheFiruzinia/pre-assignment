@@ -13,16 +13,20 @@ const CardComponent = ({ name, breweryType, city, id }) => {
     <Box mb={5} justifyContent="center" alignItems="center">
       <Card variant="outlined">
         <CardContent>
-          <Typography color="initial" gutterBottom>
+          <Typography
+            gutterBottom
+            color="textSecondary"
+            variant="body1"
+            component="div"
+          >
             {name}
           </Typography>
-          <Typography variant="h5" component="div">
+          <Typography variant="body2" color="textSecondary">
             {breweryType}
           </Typography>
-          <Typography sx={{ mb: 1.9 }} color="secondary">
-            adjective
+          <Typography variant="body2" color="textSecondary">
+            {city}
           </Typography>
-          <Typography variant="body2">{city}</Typography>
         </CardContent>
         <CardActions>
           <Link to={`/profile/${id}`}>View Details</Link>
