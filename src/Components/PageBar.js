@@ -13,7 +13,7 @@ const rightLink = {
   color: "commonWhite",
 };
 
-const HomePageBar = ({ search }) => {
+const PageBar = ({ rightComponent }) => {
   return (
     <div>
       <AppBar position="fixed">
@@ -23,7 +23,7 @@ const HomePageBar = ({ search }) => {
             ABOUT BREWERIES
           </Typography>
           <Box sx={{ flex: 1, display: "flex", justifyContent: "flex-end" }}>
-            {search}
+            {rightComponent}
           </Box>
         </Toolbar>
       </AppBar>
@@ -32,4 +32,4 @@ const HomePageBar = ({ search }) => {
   );
 };
 
-export default HomePageBar;
+export default PageBar;

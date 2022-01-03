@@ -36,7 +36,7 @@ const theme = {
     ...rawTheme.palette,
     background: {
       ...rawTheme.palette.background,
-      default: "#5e5c5c",
+      default: "#00000",
       placeholder: grey[200],
     },
   },

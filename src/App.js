@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import HomePage from "./Components/HomePage";
-import BreweryDetails from "./Components/BreweryDetails";
+import DetailPage from "./Components/DetailPage";
 import { Container } from "@material-ui/core";
 import usersService from "./Services/users";
 
@@ -18,7 +18,7 @@ const App = () => {
       <Router>
         <Switch>
           <Route path="/profile/:id">
-            <BreweryDetails breweries={breweries} />
+            <DetailPage breweries={breweries} />
           </Route>
           <Route path="/">
             <HomePage breweries={breweries} />

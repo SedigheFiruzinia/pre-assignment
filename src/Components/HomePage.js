@@ -1,9 +1,15 @@
 import React, { useState, useEffect } from "react";
 // import usersService from "../Services/users";
-import { Grid, ThemeProvider, CssBaseline, Box,Paper } from "@material-ui/core";
+import {
+  Grid,
+  ThemeProvider,
+  CssBaseline,
+  Box,
+  Paper,
+} from "@material-ui/core";
 import CardComponent from "./CardComponent";
 import SearchComponent from "./SearchComponent";
-import HomePageBar from "./HomePageBar";
+import PageBar from "./PageBar";
 import theme from "../Theme/theme";
 import backgroundImg from "../Theme/c.jpg";
 
@@ -24,22 +30,22 @@ const HomePage = ({ breweries }) => {
   );
 
   return (
-    //   <Paper style={{ 
+    //   <Paper style={{
     //     backgroundImage: `url(${backgroundImg})`
     // }}>
     <ThemeProvider theme={theme}>
       <CssBaseline />
 
-      <HomePageBar search={search} />
+      <PageBar rightComponent={search} />
       <Box
         sx={{
           display: "flex",
           backgroundRepeat: "no-repeat",
           marginTop: 50,
-          marginInline:200
+          marginInline: 200,
         }}
       >
-        <Grid item xs={12} >
+        <Grid item xs={12}>
           <Grid container justifyContent="center" spacing={5}>
             {filtered.map((user) => (
               <Grid item key={user.id} xs={3}>
@@ -54,9 +60,8 @@ const HomePage = ({ breweries }) => {
           </Grid>
         </Grid>
       </Box>
-
     </ThemeProvider>
-// </Paper>
+    // </Paper>
   );
 };
 

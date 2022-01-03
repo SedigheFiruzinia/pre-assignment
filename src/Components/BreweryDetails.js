@@ -1,19 +1,48 @@
 import React from "react";
-import { Link, useParams } from "react-router-dom";
-import { Box, Card, CardContent, Typography } from "@material-ui/core";
+import {
+  Box,
+  Button,
+  Card,
+  CardContent,
+  Typography,
+  Divider,
+} from "@material-ui/core";
+import { useHistory } from "react-router-dom";
+const BreweryDetails = ({ brewery }) => {
+  const history = useHistory();
+  console.log(brewery["address_2"] === null);
 
-const BreweryDetails = ({ breweries }) => {
-  const id = useParams().id;
-  const brewery = breweries.find((b) => b.id === id);
   return (
     <Box mb={5} justifyContent="center" alignItems="center">
-      <Card variant="outlined">
-        <CardContent>
-          {Object.keys(brewery).map((b, i) => (
-            <Typography color="initial" gutterBottom key={i}>
-              {brewery[b]}
-            </Typography>
-          ))}
+      <Card
+        variant="outlined"
+        style={{
+          backgroundColor: "rgba(0, 0, 0, 0.1)",
+        }}
+      >
+        <CardContent style={{ margin: 15 }}>
+          {Object.keys(brewery).map(
+            (key, index) =>
+              index > 0 &&
+              index <= 9 && (
+                <Typography color="initial" key={index}>
+                  <Box
+                    component="span"
+                    sx={{
+                      fontWeight: "bold",
+                      color: "rgba(30, 30, 30, 0.8)",
+                    }}
+                  >
+                    {key + " \u00A0 :\u00A0 "}
+                  </Box>
+                  {brewery[key] === null ? "-" : brewery[key]}
+                </Typography>
+              )
+          )}
+          <Divider style={{ margin: 25 }} />
+          <Box alignItems="center" sx={{ textAlign: "center" }}>
+            <Button onClick={() => history.push("/")}>back</Button>
+          </Box>
         </CardContent>
       </Card>
     </Box>
