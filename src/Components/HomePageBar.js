@@ -13,7 +13,7 @@ const rightLink = {
   color: "commonWhite",
 };
 
-const HomePageBar = () => {
+const HomePageBar = ({ search }) => {
   return (
     <div>
       <AppBar position="fixed">
@@ -23,14 +23,7 @@ const HomePageBar = () => {
             ABOUT BREWERIES
           </Typography>
           <Box sx={{ flex: 1, display: "flex", justifyContent: "flex-end" }}>
-            <Link
-              variant="h6"
-              underline="none"
-              href="/premium-themes/onepirate/sign-up/"
-              style={{ ...rightLink }}
-            >
-              {"dark mode"}
-            </Link>
+            {search}
           </Box>
         </Toolbar>
       </AppBar>

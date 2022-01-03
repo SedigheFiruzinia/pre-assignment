@@ -27,7 +27,6 @@ const SearchComponent = ({ breweries, setFiltered, filtered }) => {
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        marginBlock: "40px",
       }}
     >
       <Paper variant="outlined" component="form" onSubmit={find}>
