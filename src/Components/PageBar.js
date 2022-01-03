@@ -1,17 +1,5 @@
 import React from "react";
-import {
-  Link,
-  Box,
-  AppBar,
-  Toolbar,
-  Typography,
-  ThemeProvider,
-} from "@material-ui/core";
-
-const rightLink = {
-  fontSize: 16,
-  color: "commonWhite",
-};
+import { Box, AppBar, Toolbar, Typography } from "@material-ui/core";
 
 const PageBar = ({ rightComponent }) => {
   return (

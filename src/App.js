@@ -3,13 +3,13 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import HomePage from "./Components/HomePage";
 import DetailPage from "./Components/DetailPage";
 import { Container } from "@material-ui/core";
-import usersService from "./Services/users";
+import breweriesService from "./Services/breweries";
 
 const App = () => {
   const [breweries, setBreweries] = useState([]);
 
   useEffect(() => {
-    usersService.get().then((user) => setBreweries(user));
+    breweriesService.getAll().then((brewery) => setBreweries(brewery));
   }, []);
 
   return (

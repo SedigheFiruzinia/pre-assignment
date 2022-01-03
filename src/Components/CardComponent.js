@@ -1,14 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import {
-  Card,
-  Typography,
-  Button,
-  CardActionArea,
-  Tooltip,
-} from "@material-ui/core";
+import { Card, Typography, CardActionArea } from "@material-ui/core";
 import LocationOnIcon from "@material-ui/icons/LocationOn";
-import { red, indigo } from "@material-ui/core/colors";
+import { red } from "@material-ui/core/colors";
 
 const CardComponent = ({ name, breweryType, city, id }) => {
   const limitedName = name.length >= 23 ? name.substring(0, 20) + "..." : name;
@@ -42,10 +36,6 @@ const CardComponent = ({ name, breweryType, city, id }) => {
           <LocationOnIcon style={{ color: red[300], fontSize: 14 }} />
           {city}
         </Typography>
-
-        {/* <Typography variant="body2" gutterBottom  style={{ color:indigo[400] }}>
-        View Details
-      </Typography> */}
       </CardActionArea>
     </Card>
   );

@@ -1,12 +1,5 @@
 import React, { useState, useEffect } from "react";
-// import usersService from "../Services/users";
-import {
-  Grid,
-  ThemeProvider,
-  CssBaseline,
-  Box,
-  Paper,
-} from "@material-ui/core";
+import { Grid, ThemeProvider, CssBaseline, Box } from "@material-ui/core";
 import CardComponent from "./CardComponent";
 import SearchComponent from "./SearchComponent";
 import PageBar from "./PageBar";

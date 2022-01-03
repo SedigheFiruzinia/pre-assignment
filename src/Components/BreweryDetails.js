@@ -7,7 +7,6 @@ import {
   Typography,
   Divider,
 } from "@material-ui/core";
-import { red } from "@material-ui/core/colors";
 import { useHistory } from "react-router-dom";
 
 const BreweryDetails = ({ brewery }) => {

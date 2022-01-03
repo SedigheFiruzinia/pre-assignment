@@ -1,5 +1,4 @@
 import React from "react";
-// import usersService from "../Services/users";
 import {
   Grid,
   ThemeProvider,
@@ -7,12 +6,11 @@ import {
   Box,
   Button,
 } from "@material-ui/core";
-
+import { useHistory, useParams } from "react-router-dom";
+import storage from "../utils/storage";
 import PageBar from "./PageBar";
 import theme from "../Theme/theme";
 import BreweryDetails from "./BreweryDetails";
-import { useHistory, useParams } from "react-router-dom";
-import storage from "../utils/storage";
 
 const DetailPage = ({ breweries }) => {
   const history = useHistory();
