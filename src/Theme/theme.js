@@ -1,5 +1,5 @@
 import { createTheme } from "@material-ui/core";
-import { grey, pink } from "material-ui-colors";
+import { grey } from "material-ui-colors";
 
 const rawTheme = createTheme({
   palette: {
