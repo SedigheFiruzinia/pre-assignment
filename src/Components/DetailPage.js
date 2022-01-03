@@ -12,11 +12,19 @@ import PageBar from "./PageBar";
 import theme from "../Theme/theme";
 import BreweryDetails from "./BreweryDetails";
 import { useHistory, useParams } from "react-router-dom";
+import storage from "../utils/storage";
 
 const DetailPage = ({ breweries }) => {
   const history = useHistory();
+  let brewery;
   const id = useParams().id;
-  const brewery = breweries.find((b) => b.id === id);
+  if (storage.loadBrewery()) {
+    brewery = storage.loadBrewery();
+  } else {
+    brewery = breweries.find((b) => b.id === id);
+    storage.saveBrewery(brewery);
+  }
+
   const goBack = (
     <Button onClick={() => history.push("/")} variant="contained">
       back

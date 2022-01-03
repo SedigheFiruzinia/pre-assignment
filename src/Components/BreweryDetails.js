@@ -7,17 +7,19 @@ import {
   Typography,
   Divider,
 } from "@material-ui/core";
+import { red } from "@material-ui/core/colors";
 import { useHistory } from "react-router-dom";
+
 const BreweryDetails = ({ brewery }) => {
   const history = useHistory();
-  console.log(brewery["address_2"] === null);
 
   return (
     <Box mb={5} justifyContent="center" alignItems="center">
       <Card
         variant="outlined"
         style={{
-          backgroundColor: "rgba(0, 0, 0, 0.1)",
+          boxShadow: "5px 1px 20px -5px rgba(10,0,0,0.2)",
+          backgroundColor: "rgba(10, 0, 0, 0.05)",
         }}
       >
         <CardContent style={{ margin: 15 }}>
@@ -41,7 +43,9 @@ const BreweryDetails = ({ brewery }) => {
           )}
           <Divider style={{ margin: 25 }} />
           <Box alignItems="center" sx={{ textAlign: "center" }}>
-            <Button onClick={() => history.push("/")}>back</Button>
+            <Button onClick={() => history.push("/")} variant="outlined">
+              back
+            </Button>
           </Box>
         </CardContent>
       </Card>

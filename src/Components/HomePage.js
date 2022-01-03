@@ -11,13 +11,13 @@ import CardComponent from "./CardComponent";
 import SearchComponent from "./SearchComponent";
 import PageBar from "./PageBar";
 import theme from "../Theme/theme";
-import backgroundImg from "../Theme/c.jpg";
+import storage from "../utils/storage";
 
 const HomePage = ({ breweries }) => {
   const [filtered, setFiltered] = useState([]);
 
   useEffect(() => {
-    console.log("useEffect2");
+    storage.clearStorage();
     setFiltered(breweries);
   }, [breweries]);
 
@@ -30,9 +30,6 @@ const HomePage = ({ breweries }) => {
   );
 
   return (
-    //   <Paper style={{
-    //     backgroundImage: `url(${backgroundImg})`
-    // }}>
     <ThemeProvider theme={theme}>
       <CssBaseline />
 

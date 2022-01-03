@@ -9,7 +9,6 @@ const App = () => {
   const [breweries, setBreweries] = useState([]);
 
   useEffect(() => {
-    console.log("useEffect1");
     usersService.get().then((user) => setBreweries(user));
   }, []);
 
